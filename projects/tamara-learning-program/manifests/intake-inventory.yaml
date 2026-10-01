@@ -1,0 +1,58 @@
+project:
+  id: IA-EDU-TAMARA-001
+  name: Tamara Learning Program
+  organization: Imperial Archive
+  owner: Latifah Almutairi
+  repository: latifah6114-ux/Imperial-Archive
+  project_path: projects/tamara-learning-program/
+  intake_status: INSTALLED_NOT_RELEASED
+  preservation_rule: preserve_originals_never_overwrite
+
+received_sources:
+  - filename: IA_EDUCATIONAL_CHILD_LEARNING_SYSTEM_TAMARA_MASTER_v1.0.0.yaml
+    class: GOVERNING_EDUCATIONAL_MASTER
+    status: RECEIVED_IN_CHAT_SOURCE_PENDING_REPOSITORY_FILE
+  - filename: TAMARA_FIXED_IDENTITY_TEMPLATE_AND_GROWTH_PROMPT.txt
+    class: LOCKED_IDENTITY_AND_GROWTH_STANDARD
+    status: RECEIVED_IN_CHAT_SOURCE_PENDING_REPOSITORY_FILE
+  - filename: TAMARA_ENGLISH_PORTAL_LITE_SOURCE🟦.txt
+    class: ENGLISH_PORTAL_SOURCE
+    status: RECEIVED
+  - filename: TAMARA_ENGLISH_PORTAL_LITE_SOURCE🛑.txt
+    class: ENGLISH_PORTAL_SOURCE_DUPLICATE_CANDIDATE
+    status: RECEIVED
+  - filename: TAMARA_ENGLISH_PORTAL_LITE🟦.html
+    class: ENGLISH_PORTAL_RUNTIME_CANDIDATE
+    status: RECEIVED
+  - filename: TAMARA_ENGLISH_PORTAL_LITE🛑.html
+    class: ENGLISH_PORTAL_RUNTIME_DUPLICATE_CANDIDATE
+    status: RECEIVED
+  - filename: user-supplied-image-001
+    class: CANDIDATE_COVER_HERO_IMAGE
+    status: RECEIVED_IN_CHAT_NOT_WRITTEN_AS_BINARY_ASSET
+
+missing_or_unverified:
+  - code: SOURCE_ASSET_GAP
+    asset_id: IA-LATIFAH-SIGNATURE-001
+    status: owner-approved-independent-signature-asset-not-supplied
+  - code: SOURCE_ASSET_GAP
+    asset_id: IMPERIAL-ARCHIVE-LOGO
+    status: independent-approved-logo-not-supplied
+  - code: SOURCE_ASSET_GAP
+    asset_id: IMPERIAL-ARCHIVE-SEAL
+    status: independent-approved-seal-not-supplied
+  - code: SOURCE_SPEC_GAP
+    item: IA Mathematics Execution Master Source
+  - code: SOURCE_SPEC_GAP
+    item: Science curriculum sources
+  - code: SOURCE_SPEC_GAP
+    item: Arabic curriculum sources
+  - code: SOURCE_ASSET_GAP
+    item: local audio masters and audio manifests
+
+release_blockers:
+  - exact original source files must be committed rather than represented only by chat text
+  - identity assets require provenance, rights status, version, and sha256
+  - candidate cover image requires rights and child-media review
+  - external HeyGen audio URLs require local archival masters or an approved delivery policy
+  - all critical QA gates must pass
