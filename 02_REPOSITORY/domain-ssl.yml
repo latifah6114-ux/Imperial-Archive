@@ -1,0 +1,22 @@
+document:
+  id: "IA-REPO-SSL-001"
+  title: "Domain SSL"
+  status: "ACTIVE"
+  created: "2026-10-10"
+
+recommended:
+  provider: "Cloudflare Universal SSL"
+  min_tls_version: "1.2"
+  preferred_tls_version: "1.3"
+  hsts: "enabled"
+  hsts_max_age: "31536000"
+
+security_headers:
+  - { header: "Strict-Transport-Security", value: "max-age=31536000; includeSubDomains", status: "pending" }
+  - { header: "X-Content-Type-Options", value: "nosniff", status: "pending" }
+  - { header: "X-Frame-Options", value: "DENY", status: "pending" }
+  - { header: "Content-Security-Policy", value: "default-src 'self'", status: "pending" }
+
+owner: "Latifah Almutairi"
+last_updated: "2026-10-10"
+rights: "© 2026 Imperial Archive."

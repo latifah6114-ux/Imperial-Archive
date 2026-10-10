@@ -1,0 +1,20 @@
+document:
+  id: "IA-REPO-SUBDOM-001"
+  title: "Subdomains"
+  status: "ACTIVE"
+  created: "2026-10-10"
+
+apex_domain_note: "Apex domain (imperialarchive.ai) is managed as IA-DOMAIN-MAIN in domain-registry.yml and canonical-registry.yml. This list contains subdomain labels only (www, tamara, security, etc.) which resolve as <label>.imperialarchive.ai."
+
+subdomains:
+  - { id: "SUB-WWW", name: "www", status: "planned", phase: "Phase 1" }
+  - { id: "SUB-TAMARA", name: "tamara", status: "planned", phase: "Phase 1" }
+  - { id: "SUB-SECURITY", name: "security", status: "planned", phase: "Phase 1" }
+  - { id: "SUB-DOCS", name: "docs", status: "planned", phase: "Phase 2" }
+  - { id: "SUB-ELIAS", name: "elias", status: "planned", phase: "Phase 2" }
+  - { id: "SUB-API", name: "api", status: "future", phase: "Phase 3" }
+  - { id: "SUB-STATUS", name: "status", status: "future", phase: "Phase 3" }
+
+owner: "Latifah Almutairi"
+last_updated: "2026-10-10"
+rights: "© 2026 Imperial Archive."

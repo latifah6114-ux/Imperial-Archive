@@ -1,0 +1,19 @@
+document:
+  id: "IA-REPO-COST-001"
+  title: "Domain Costs"
+  status: "ACTIVE"
+  created: "2026-10-10"
+
+recurring:
+  - { id: "COST-DOMAIN-AI", item: "imperialarchive.ai", provider: "Epik.com", frequency: "annual", cost: { amount: 35, currency: "USD", note: "Typical .ai registry + Epik markup" } }
+  - { id: "COST-DOMAIN-COM", item: "imperialarchive.com", provider: "Epik.com", frequency: "annual", cost: { amount: 10, currency: "USD", note: "Typical .com registry + Epik markup" } }
+  - { id: "COST-CLOUDFLARE", item: "Cloudflare", provider: "Cloudflare", frequency: "monthly", cost: { amount: "0-40", currency: "USD", note: "Free tier to Pro ($200/mo) depending on traffic/features" }, annual_range: "0-480" }
+
+estimated_annual:
+  domain_renewals: { subtotal: 45, currency: "USD", note: ".ai + .com annual renewal" }
+  cloudflare_service: { min: 0, max: 480, currency: "USD", note: "Free tier through Pro plan" }
+  total: { min: 45, max: 525, currency: "USD", note: "Domains + Cloudflare annual cost range" }
+
+owner: "Latifah Almutairi"
+last_updated: "2026-10-10"
+rights: "© 2026 Imperial Archive."

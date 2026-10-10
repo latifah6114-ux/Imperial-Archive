@@ -1,0 +1,45 @@
+document:
+  id: "IA-REPO-DOM-001"
+  title: "Domain Registry"
+  status: "LOCKED_CANONICAL"
+  created: "2026-10-10"
+
+primary_domain:
+  id: "IA-DOMAIN-MAIN"
+  name: "imperialarchive.ai"
+  tld: ".ai"
+  status: "active"
+  auto_renew: true
+
+secondary_domain:
+  id: "IA-DOMAIN-EMAIL"
+  name: "imperialarchive.com"
+  tld: ".com"
+  status: "active"
+  purpose: "Email only"
+  auto_renew: true
+
+registration:
+  registrar: "Epik.com"
+  privacy_protection: true
+  whois_status: "private"
+  transfer_lock: "pending"
+
+dns:
+  provider: "Cloudflare"
+  dns_status: "pending_propagation"
+  dnssec: "pending"
+
+ownership:
+  legal_owner: "Latifah Almutairi"
+
+status_summary:
+  domain_registered: "yes"
+  dns_delegated: "pending"
+  two_factor_epik: "pending"
+  two_factor_cloudflare: "pending"
+  transfer_lock: "pending"
+
+owner: "Latifah Almutairi"
+last_updated: "2026-10-10"
+rights: "© 2026 Imperial Archive."

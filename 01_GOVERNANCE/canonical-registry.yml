@@ -29,6 +29,12 @@ entities:
       registrar: "Epik.com"
       dns_provider: "Cloudflare"
       status: "active"
+    - id: "IA-DOMAIN-EMAIL"
+      name: "imperialarchive.com"
+      registrar: "Epik.com"
+      dns_provider: "Cloudflare"
+      status: "active"
+      purpose: "Email-only domain"
   tsc_layers:
     - { id: "TSC-CORE", name: "Core Recovery" }
     - { id: "TSC-VISUAL", name: "Visual Identity" }
