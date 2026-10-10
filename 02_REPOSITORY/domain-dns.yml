@@ -5,16 +5,20 @@ document:
   created: "2026-10-10"
 
 current_nameservers:
-  - { id: "DNS-NS-1", type: "NS", value: "a.ns.cloudflare.com", status: "pending_propagation" }
-  - { id: "DNS-NS-2", type: "NS", value: "b.ns.cloudflare.com", status: "pending_propagation" }
+  - { id: "DNS-NS-1", type: "NS", value: "a.ns.cloudflare.com", status: "pending_propagation", note: "PLACEHOLDER - Replace with zone-specific pair from Cloudflare account" }
+  - { id: "DNS-NS-2", type: "NS", value: "b.ns.cloudflare.com", status: "pending_propagation", note: "PLACEHOLDER - Replace with zone-specific pair from Cloudflare account" }
 
 recommended_security_records:
   spf:
-    value: "v=spf1 include:_spf.google.com ~all"
+    value: "v=spf1 include:_spf.google.com ~all (CONFIRM PROVIDER FIRST)"
     priority: "HIGH"
+    note: "Adjust SPF include based on selected email provider. Do NOT publish until email provider is configured."
   dmarc:
-    value: "v=DMARC1; p=reject"
+    initial_value: "v=DMARC1; p=none; rua=mailto:security@imperialarchive.com"
+    staged_value: "v=DMARC1; p=quarantine; rua=mailto:security@imperialarchive.com"
+    final_value: "v=DMARC1; p=reject; rua=mailto:security@imperialarchive.com"
     priority: "HIGH"
+    note: "Stage rollout: start with p=none, monitor for 30 days, advance to p=quarantine, then p=reject once DKIM is live."
   caa:
     value: "0 issue \"letsencrypt.org\""
     priority: "MEDIUM"
