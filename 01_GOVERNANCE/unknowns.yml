@@ -1,0 +1,18 @@
+document:
+  id: "IA-GOV-UNK-001"
+  title: "Unknowns Registry"
+  status: "ACTIVE"
+  created: "2026-10-10"
+
+unknowns:
+  - { id: "UNK-001", question: "Final public brand name?", status: "open", priority: "medium" }
+  - { id: "UNK-002", question: "Hosting provider?", status: "open", priority: "high" }
+  - { id: "UNK-003", question: "Number of agents by 2027?", status: "open", priority: "low" }
+  - { id: "UNK-004", question: "Revenue model?", status: "open", priority: "medium" }
+  - { id: "UNK-005", question: "Arabic official language?", status: "decided", answer: "Yes — bilingual." }
+  - { id: "UNK-006", question: "Long-term AI providers?", status: "open", priority: "high" }
+  - { id: "UNK-007", question: "DR test schedule?", status: "open", priority: "high" }
+
+owner: "Latifah Almutairi"
+last_updated: "2026-10-10"
+rights: "© 2026 Imperial Archive."
