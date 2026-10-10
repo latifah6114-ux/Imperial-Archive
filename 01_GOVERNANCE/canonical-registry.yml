@@ -1,0 +1,46 @@
+document:
+  id: "IA-GOV-CR-001"
+  title: "Canonical Registry"
+  status: "LOCKED_CANONICAL"
+  created: "2026-10-10"
+
+entities:
+  company:
+    - id: "IA-COMPANY"
+      name: "Imperial Archive"
+      domain: "imperialarchive.ai"
+      founded: "2026"
+      status: "active"
+      owner: "Latifah Almutairi"
+  brands:
+    - { id: "IA-BRAND-AATHER", name: "AATHER", parent: "IA-COMPANY", status: "active" }
+  projects:
+    - { id: "IA-PROJ-TAMARA", name: "Tamara Learning Program", parent: "IA-BRAND-AATHER", status: "in_progress" }
+    - { id: "IA-PROJ-ELIAS", name: "Elias Home Room", parent: "IA-BRAND-AATHER", status: "planned" }
+  agents:
+    - { id: "IA-AGENT-CONSULTANT-01", name: "First Consultant", role: "advisor", status: "conditional" }
+  platforms:
+    - { id: "IA-PLAT-GITHUB", name: "GitHub", account: "latifah6114-ux", status: "active" }
+    - { id: "IA-PLAT-CLOUDFLARE", name: "Cloudflare", status: "active" }
+    - { id: "IA-PLAT-EPIK", name: "Epik.com", status: "active" }
+  domains:
+    - id: "IA-DOMAIN-MAIN"
+      name: "imperialarchive.ai"
+      registrar: "Epik.com"
+      dns_provider: "Cloudflare"
+      status: "active"
+  tsc_layers:
+    - { id: "TSC-CORE", name: "Core Recovery" }
+    - { id: "TSC-VISUAL", name: "Visual Identity" }
+    - { id: "TSC-ARCHIVE", name: "Archive & Sequence" }
+    - { id: "TSC-WINGS", name: "Brands & Divisions" }
+    - { id: "TSC-LANGUAGE", name: "Dual Language" }
+    - { id: "TSC-DECODING", name: "Decoding" }
+    - { id: "TSC-DASH", name: "Dashboard" }
+    - { id: "TSC-EVOLUTION", name: "Evolution Tracking" }
+    - { id: "TSC-ECHO", name: "Echoes & Quotes" }
+    - { id: "TSC-STRUCTURE", name: "Structure & Organization" }
+
+owner: "Latifah Almutairi"
+last_updated: "2026-10-10"
+rights: "© 2026 Imperial Archive."
