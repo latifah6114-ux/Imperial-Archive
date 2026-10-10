@@ -1,0 +1,31 @@
+document:
+  id: "IA-REPO-CM-001"
+  title: "Connection Map"
+  status: "ACTIVE"
+  created: "2026-10-10"
+
+# CLASSIFICATION LEVELS:
+# DECLARED — mentioned in repository only
+# CONFIGURED — config exists
+# VERIFIED_LIVE — working and confirmed
+
+connections:
+  - { id: "CONN-GITHUB", name: "GitHub", type: "HOST", status: "VERIFIED_LIVE", account: "latifah6114-ux" }
+  - { id: "CONN-DOMAIN", name: "imperialarchive.ai", type: "DOMAIN", status: "CONFIGURED", registrar: "Epik.com", dns_provider: "Cloudflare" }
+  - { id: "CONN-EPIK", name: "Epik.com", type: "REGISTRAR", status: "DECLARED" }
+  - { id: "CONN-CLOUDFLARE", name: "Cloudflare", type: "DNS_CDN", status: "DECLARED" }
+  - { id: "CONN-REPLIT", name: "Replit", type: "EXECUTION", status: "ACTIVE" }
+  - { id: "CONN-OPENAI", name: "OpenAI", type: "AI_PROVIDER", status: "ACTIVE" }
+  - { id: "CONN-NOTION", name: "Notion", type: "KNOWLEDGE_UI", status: "ACTIVE" }
+  - { id: "CONN-ELEVENLABS", name: "ElevenLabs", type: "VOICE_AI", status: "SUSPENDED" }
+  - { id: "CONN-HEYGEN", name: "HeyGen", type: "VIDEO", status: "SUSPENDED" }
+  - { id: "CONN-META", name: "Meta", type: "SOCIAL", status: "SUSPENDED" }
+
+rules:
+  - "No connection without verification."
+  - "No external platform overrides canonical repository."
+  - "All connections logged here before activation."
+
+owner: "Latifah Almutairi"
+last_updated: "2026-10-10"
+rights: "© 2026 Imperial Archive."

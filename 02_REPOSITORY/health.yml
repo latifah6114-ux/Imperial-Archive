@@ -1,0 +1,27 @@
+document:
+  id: "IA-HEALTH-001"
+  title: "Health Model"
+  status: "ACTIVE"
+  created: "2026-10-10"
+
+states:
+  - { id: "HEALTHY", description: "All systems working" }
+  - { id: "DEGRADED", description: "Some systems slow" }
+  - { id: "PARTIAL", description: "Some systems offline" }
+  - { id: "BLOCKED", description: "Critical system down" }
+  - { id: "FAILED", description: "System unusable" }
+  - { id: "RECOVERING", description: "Recovery in progress" }
+
+current:
+  repository: "HEALTHY"
+  governance: "HEALTHY"
+  security: "DEGRADED"
+  domain: "DEGRADED"
+  website: "NOT_DEPLOYED"
+  social: "SUSPENDED"
+  agents: "PARTIAL"
+  last_check: "2026-10-10"
+
+owner: "Latifah Almutairi"
+last_updated: "2026-10-10"
+rights: "© 2026 Imperial Archive."

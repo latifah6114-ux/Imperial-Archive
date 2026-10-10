@@ -1,0 +1,55 @@
+document:
+  id: "IA-STRUCT-001"
+  title: "Structure Definition"
+  status: "LOCKED_CANONICAL"
+  created: "2026-10-10"
+
+root:
+  - README.md
+  - LICENSE
+  - .gitignore
+  - CNAME
+  - SECURITY.md
+  - LOCKDOWN_RECORD.md
+
+folders:
+  "00_FOUNDATION":
+    purpose: "الأصل والرؤية"
+    files: [origin.md, vision.md, constitution.md, README.md]
+  "01_GOVERNANCE":
+    purpose: "الحوكمة"
+    files: [source-of-truth.yml, canonical-registry.yml, authority-matrix.yml, conflicts.yml, unknowns.yml, decision-log.yml, change-control.yml, visibility-declaration.yml]
+  "02_REPOSITORY":
+    purpose: "تعريف المستودع والدومين"
+    files: [repository.yml, structure.yml, installation.yml, health.yml, connection-map.yml, domain-registry.yml, domain-dns.yml, domain-subdomains.yml, domain-email.yml, domain-ssl.yml, domain-costs.yml]
+  "03_SECURITY":
+    purpose: "الأمن"
+    files: [integrity.yml, domain-security.yml, website-security.yml, social-security.yml]
+  "04_AGENTS":
+    purpose: "الوكلاء"
+    files: [AGENTS_CHARTER.md, DUTY_TO_PRESENT.md, FIRST_ATTEMPT_ELIMINATION.md, agent-elimination-log.yml]
+  "05_PROJECTS":
+    purpose: "المشاريع"
+    subfolders: [tamara-learning-program, elias-home-room]
+  "06_ARCHIVE":
+    purpose: "الأرشيف"
+    files: [recovery-map.yml, domain-recovery.yml, website-recovery.yml, social-recovery.yml]
+  "07_TSC":
+    purpose: "طبقات TSC"
+    status: "to_be_defined"
+  "08_WEBSITE":
+    purpose: "الموقع"
+    files: [website-registry.yml, website-hosting.yml, website-content.yml]
+  "09_SOCIAL":
+    purpose: "السوشيال ميديا"
+    files: [social-registry.yml, social-accounts.yml, social-policy.yml]
+  "10_PLATFORMS":
+    purpose: "المنصات"
+    files: [platforms-registry.yml]
+  "99_TESTS":
+    purpose: "الاختبارات"
+    files: [validate.sh]
+
+owner: "Latifah Almutairi"
+last_updated: "2026-10-10"
+rights: "© 2026 Imperial Archive."

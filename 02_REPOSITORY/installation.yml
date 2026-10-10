@@ -1,0 +1,30 @@
+document:
+  id: "IA-INSTALL-001"
+  title: "Installation Protocol"
+  status: "LOCKED_CANONICAL"
+  created: "2026-10-10"
+
+core_rule:
+  arabic: "التثبيت قطرة قطرة، لا دفعة واحدة."
+  english: "Install drop by drop, not in bulk."
+
+protocol:
+  1: "RECEIVE — استلام الملف"
+  2: "CLASSIFY — تصنيف الملف"
+  3: "VALIDATE — التحقق من الصحة"
+  4: "TEST — اختبار الملف"
+  5: "COMMIT — رفع في فرع منفصل"
+  6: "OBSERVE — مراقبة النتائج"
+  7: "MERGE — الدمج بعد النجاح"
+  8: "LOG — تسجيل في decision-log"
+
+batch_rules:
+  max_files_per_batch: 8
+  observation_period_hours: 24
+
+exception_rule:
+  note: "Foundation Install (2026-10-10) documented as founder-approved exception."
+
+owner: "Latifah Almutairi"
+last_updated: "2026-10-10"
+rights: "© 2026 Imperial Archive."
