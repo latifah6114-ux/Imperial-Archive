@@ -1,0 +1,31 @@
+document:
+  id: "IA-REPO-001"
+  title: "Repository Definition"
+  status: "LOCKED_CANONICAL"
+  created: "2026-10-10"
+
+repository:
+  name: "Imperial-Archive"
+  owner: "latifah6114-ux"
+  visibility: "private"
+  default_branch: "main"
+  created: "2026"
+  language: ["en", "ar"]
+  license: "proprietary"
+  domain: "imperialarchive.ai"
+
+branches:
+  main:
+    purpose: "Canonical source"
+    protected: true
+    direct_push: false
+    require_pr: true
+    require_review: true
+
+commit_policy:
+  require_gpg_signature: true
+  require_conventional_format: true
+
+owner: "Latifah Almutairi"
+last_updated: "2026-10-10"
+rights: "© 2026 Imperial Archive."
