@@ -1,0 +1,33 @@
+document:
+  id: "IA-GOV-VISIBILITY-001"
+  title: "Visibility Declaration"
+  status: "LOCKED_CANONICAL"
+  created: "2026-10-10"
+
+visibility:
+  current_status: "PRIVATE"
+  effective_from: "2026-10-08T00:00:00+03:00"
+  authority: "Latifah Almutairi"
+
+activation:
+  status: "SCHEDULED"
+  activation_date: "2027-01-01"
+  activation_time: "00:00:00"
+  timezone: "Asia/Riyadh (UTC+3)"
+  activation_type: "GRADUAL_REVIEW"
+
+permanent_privacy:
+  items:
+    - "Child data (Tamara, Elias)"
+    - "Private keys"
+    - "Credentials"
+    - "Sensitive decision log"
+    - "Full origin story unredacted"
+
+public_expression:
+  future_repository: "Imperial-Archive-Public"
+  content: "Vision only, no core"
+
+owner: "Latifah Almutairi"
+last_updated: "2026-10-10"
+rights: "© 2026 Imperial Archive."

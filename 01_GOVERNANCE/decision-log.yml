@@ -1,0 +1,19 @@
+document:
+  id: "IA-GOV-DL-001"
+  title: "Decision Log"
+  status: "ACTIVE"
+  created: "2026-10-10"
+
+decisions:
+  - { id: "DEC-2026-001", date: "2026-10-08", title: "Repository Private", status: "executed" }
+  - { id: "DEC-2026-002", date: "2026-10-08", title: "Deprecate No External Ideas", status: "executed" }
+  - { id: "DEC-2026-003", date: "2026-10-08", title: "Reclassify UNLIMITED as Symbolic", status: "executed" }
+  - { id: "DEC-2026-004", date: "2026-10-08", title: "Create Source of Truth", status: "executed" }
+  - { id: "DEC-2026-005", date: "2026-10-08", title: "Create Canonical Registry", status: "executed" }
+  - { id: "DEC-2026-006", date: "2026-10-08", title: "Agent Authority Clarification", status: "executed" }
+  - { id: "DEC-2026-007", date: "2026-10-10", title: "Domain Registry Created", status: "executed" }
+  - { id: "DEC-2026-008", date: "2026-10-10", title: "Foundation Install Segments 1-3", status: "in_progress" }
+
+owner: "Latifah Almutairi"
+last_updated: "2026-10-10"
+rights: "© 2026 Imperial Archive."

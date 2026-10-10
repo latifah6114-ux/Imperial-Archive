@@ -1,0 +1,31 @@
+document:
+  id: "IA-GOV-AM-001"
+  title: "Authority Matrix"
+  status: "LOCKED_CANONICAL"
+  created: "2026-10-10"
+
+roles:
+  - id: "ROLE-FOUNDER"
+    name: "Founder"
+    authority: "absolute"
+    can: ["Decide anything", "Override any decision"]
+    cannot: ["Erase origin", "Violate child protection"]
+  - id: "ROLE-ADVISOR"
+    name: "Advisor"
+    authority: "advisory"
+    can: ["Read", "Analyze", "Suggest", "Draft", "Report"]
+    cannot: ["Execute", "Commit to main", "Decide", "Access child data"]
+  - id: "ROLE-EXECUTOR"
+    name: "Executor"
+    authority: "execution_with_approval"
+    can: ["Execute approved tasks", "Create branches", "Open PRs"]
+    cannot: ["Merge to main", "Modify governance", "Access child data"]
+  - id: "ROLE-STEWARD"
+    name: "Steward"
+    authority: "maintenance"
+    can: ["Maintain", "Clean", "Preserve", "Report"]
+    cannot: ["Redefine origin", "Change mission"]
+
+owner: "Latifah Almutairi"
+last_updated: "2026-10-10"
+rights: "© 2026 Imperial Archive."

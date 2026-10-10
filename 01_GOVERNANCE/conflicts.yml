@@ -1,0 +1,24 @@
+document:
+  id: "IA-GOV-CONF-001"
+  title: "Conflicts Registry"
+  status: "ACTIVE"
+  created: "2026-10-10"
+
+conflicts:
+  - { id: "CONFLICT-001", title: "Public vs Private Repository", status: "resolved", severity: "HIGH" }
+  - { id: "CONFLICT-002", title: "No External Ideas vs External Bridge", status: "deprecated", severity: "MEDIUM" }
+  - { id: "CONFLICT-003", title: "UNLIMITED Language vs Engineering Limits", status: "reclassified", severity: "MEDIUM" }
+  - { id: "CONFLICT-004", title: "Declared config/ path vs actual", status: "pending", severity: "LOW" }
+  - { id: "CONFLICT-005", title: "Unsigned Commit", status: "pending", severity: "MEDIUM" }
+  - { id: "CONFLICT-006", title: "Main Branch Not Protected", status: "pending", severity: "HIGH" }
+
+summary:
+  total: 6
+  resolved: 1
+  deprecated: 1
+  reclassified: 1
+  pending: 3
+
+owner: "Latifah Almutairi"
+last_updated: "2026-10-10"
+rights: "© 2026 Imperial Archive."
