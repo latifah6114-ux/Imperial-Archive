@@ -1,0 +1,25 @@
+document:
+  id: "IA-REPO-EMAIL-001"
+  title: "Domain Email"
+  status: "ACTIVE"
+  created: "2026-10-10"
+
+provider: { name: "unknown", status: "needs_configuration" }
+
+email_addresses:
+  - { id: "EMAIL-FOUNDER", address: "founder@imperialarchive.ai", priority: "HIGH" }
+  - { id: "EMAIL-SECURITY", address: "security@imperialarchive.ai", priority: "HIGH" }
+  - { id: "EMAIL-INFO", address: "info@imperialarchive.ai", priority: "MEDIUM" }
+
+email_security:
+  spf: { status: "pending" }
+  dkim: { status: "pending" }
+  dmarc: { status: "pending", policy: "reject" }
+
+routing:
+  classification: "RESTRICTED"
+  public_visibility: false
+
+owner: "Latifah Almutairi"
+last_updated: "2026-10-10"
+rights: "© 2026 Imperial Archive."
