@@ -1,0 +1,29 @@
+document:
+  id: "IA-GOV-SOT-001"
+  title: "Source of Truth"
+  arabic_title: "مصدر الحقيقة"
+  status: "LOCKED_CANONICAL"
+  authority: "FOUNDER_DEFINED"
+  created: "2026-10-10"
+
+precedence:
+  1: { source: "FOUNDER_CANONICAL_DECISION", description: "قرار المؤسس المباشر" }
+  2: { source: "CANONICAL_REPOSITORY_MAIN", description: "الفرع الرئيسي" }
+  3: { source: "VERIFIED_DECISION_LOG", description: "سجل القرارات" }
+  4: { source: "APPROVED_SYSTEM_CONFIG", description: "إعدادات معتمدة" }
+  5: { source: "VERIFIED_OPERATIONAL_RECORDS", description: "سجلات تشغيلية" }
+  6: { source: "RESEARCH_AND_EVIDENCE", description: "بحث وأدلة" }
+  7: { source: "EXTERNAL_REFERENCE", description: "مراجع خارجية" }
+
+rules:
+  - { id: "SOT-R1", rule: "Higher precedence wins." }
+  - { id: "SOT-R2", rule: "Same precedence: newer date wins." }
+  - { id: "SOT-R3", rule: "Same date: founder decides." }
+  - { id: "SOT-R4", rule: "No platform overrides canonical." }
+  - { id: "SOT-R5", rule: "No agent overrides founder." }
+  - { id: "SOT-R6", rule: "Conflicts logged before resolution." }
+  - { id: "SOT-R7", rule: "Resolutions logged in decision-log." }
+
+owner: "Latifah Almutairi"
+last_updated: "2026-10-10"
+rights: "© 2026 Imperial Archive."
