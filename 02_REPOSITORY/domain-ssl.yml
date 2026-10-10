@@ -12,9 +12,10 @@ recommended:
   hsts_max_age: "31536000"
 
 security_headers:
-  - { header: "Strict-Transport-Security", value: "max-age=31536000", status: "pending" }
+  - { header: "Strict-Transport-Security", value: "max-age=31536000; includeSubDomains", status: "pending" }
   - { header: "X-Content-Type-Options", value: "nosniff", status: "pending" }
   - { header: "X-Frame-Options", value: "DENY", status: "pending" }
+  - { header: "Content-Security-Policy", value: "default-src 'self'", status: "pending" }
 
 owner: "Latifah Almutairi"
 last_updated: "2026-10-10"
