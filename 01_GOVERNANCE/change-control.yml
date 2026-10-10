@@ -1,0 +1,32 @@
+document:
+  id: "IA-GOV-CC-001"
+  title: "Change Control"
+  status: "LOCKED_CANONICAL"
+  created: "2026-10-10"
+
+change_types:
+  - { id: "CHANGE-CRITICAL", requires: ["Founder approval", "PR review", "Signed commit"] }
+  - { id: "CHANGE-MAJOR", requires: ["Founder approval", "PR review"] }
+  - { id: "CHANGE-MINOR", requires: ["PR review"] }
+  - { id: "CHANGE-PATCH", requires: ["Self-review"] }
+
+workflow:
+  1: "Propose change (issue or PR)"
+  2: "Classify change type"
+  3: "Assess impact"
+  4: "Validate against source-of-truth"
+  5: "Get required approval"
+  6: "Merge to main"
+  7: "Log in decision-log"
+  8: "Verify"
+
+prohibitions:
+  - "No direct commit to main."
+  - "No force push to main."
+  - "No bypass of approval."
+  - "No unsigned commits for critical changes."
+  - "No silent changes."
+
+owner: "Latifah Almutairi"
+last_updated: "2026-10-10"
+rights: "© 2026 Imperial Archive."
