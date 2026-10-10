@@ -10,7 +10,7 @@ current_nameservers:
 
 recommended_security_records:
   spf:
-    value: "v=spf1 include:_spf.google.com ~all (CONFIRM PROVIDER FIRST)"
+    value: "v=spf1 include:_spf.google.com ~all"
     priority: "HIGH"
     note: "Adjust SPF include based on selected email provider. Do NOT publish until email provider is configured."
   dmarc:
