@@ -7,9 +7,9 @@ document:
 provider: { name: "unknown", status: "needs_configuration" }
 
 email_addresses:
-  - { id: "EMAIL-FOUNDER", address: "founder@imperialarchive.ai", priority: "HIGH" }
-  - { id: "EMAIL-SECURITY", address: "security@imperialarchive.ai", priority: "HIGH" }
-  - { id: "EMAIL-INFO", address: "info@imperialarchive.ai", priority: "MEDIUM" }
+  - { id: "EMAIL-FOUNDER", address: "founder@imperialarchive.com", priority: "HIGH" }
+  - { id: "EMAIL-SECURITY", address: "security@imperialarchive.com", priority: "HIGH" }
+  - { id: "EMAIL-INFO", address: "info@imperialarchive.com", priority: "MEDIUM" }
 
 email_security:
   spf: { status: "pending" }
