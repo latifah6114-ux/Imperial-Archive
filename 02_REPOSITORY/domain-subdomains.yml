@@ -1,0 +1,19 @@
+document:
+  id: "IA-REPO-SUBDOM-001"
+  title: "Subdomains"
+  status: "ACTIVE"
+  created: "2026-10-10"
+
+subdomains:
+  - { id: "SUB-MAIN", name: "imperialarchive.ai", status: "planned", phase: "Phase 1" }
+  - { id: "SUB-WWW", name: "www", status: "planned", phase: "Phase 1" }
+  - { id: "SUB-TAMARA", name: "tamara", status: "planned", phase: "Phase 1" }
+  - { id: "SUB-SECURITY", name: "security", status: "planned", phase: "Phase 1" }
+  - { id: "SUB-DOCS", name: "docs", status: "planned", phase: "Phase 2" }
+  - { id: "SUB-ELIAS", name: "elias", status: "planned", phase: "Phase 2" }
+  - { id: "SUB-API", name: "api", status: "future", phase: "Phase 3" }
+  - { id: "SUB-STATUS", name: "status", status: "future", phase: "Phase 3" }
+
+owner: "Latifah Almutairi"
+last_updated: "2026-10-10"
+rights: "© 2026 Imperial Archive."
