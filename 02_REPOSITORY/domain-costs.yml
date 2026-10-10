@@ -1,0 +1,17 @@
+document:
+  id: "IA-REPO-COST-001"
+  title: "Domain Costs"
+  status: "ACTIVE"
+  created: "2026-10-10"
+
+recurring:
+  - { id: "COST-DOMAIN-AI", item: "imperialarchive.ai", provider: "Epik.com", frequency: "annual" }
+  - { id: "COST-DOMAIN-COM", item: "imperialarchive.com", provider: "Epik.com", frequency: "annual" }
+  - { id: "COST-CLOUDFLARE", item: "Cloudflare", provider: "Cloudflare", frequency: "monthly" }
+
+estimated_annual:
+  total: { min: 80, max: 490, currency: "USD" }
+
+owner: "Latifah Almutairi"
+last_updated: "2026-10-10"
+rights: "© 2026 Imperial Archive."
