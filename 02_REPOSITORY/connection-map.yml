@@ -19,6 +19,7 @@ connections:
   - { id: "CONN-NOTION", name: "Notion", type: "KNOWLEDGE_UI", status: "ACTIVE" }
   - { id: "CONN-ELEVENLABS", name: "ElevenLabs", type: "VOICE_AI", status: "SUSPENDED" }
   - { id: "CONN-HEYGEN", name: "HeyGen", type: "VIDEO", status: "SUSPENDED" }
+  - { id: "CONN-N8N", name: "n8n Cloud", type: "AUTOMATION", status: "DECLARED" }
   - { id: "CONN-META", name: "Meta", type: "SOCIAL", status: "SUSPENDED" }
 
 rules:

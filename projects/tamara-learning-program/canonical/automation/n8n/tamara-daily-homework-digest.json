@@ -1,0 +1,113 @@
+{
+ "name": "Tamara - Daily Homework Digest",
+ "nodes": [
+  {
+   "parameters": {
+    "rule": {
+     "interval": [
+      {
+       "field": "cronExpression",
+       "expression": "30 15 * * 0-4,6"
+      }
+     ]
+    }
+   },
+   "id": "a1",
+   "name": "Every day 3:30 PM",
+   "type": "n8n-nodes-base.scheduleTrigger",
+   "typeVersion": 1.2,
+   "position": [
+    0,
+    0
+   ]
+  },
+  {
+   "parameters": {
+    "url": "PASTE_SCHOOLOGY_ICAL_LINK_HERE",
+    "options": {
+     "response": {
+      "response": {
+       "responseFormat": "text"
+      }
+     }
+    }
+   },
+   "id": "a2",
+   "name": "Get Schoology calendar",
+   "type": "n8n-nodes-base.httpRequest",
+   "typeVersion": 4.2,
+   "position": [
+    220,
+    0
+   ]
+  },
+  {
+   "parameters": {
+    "jsCode": "// n8n Code node: parse Schoology iCal feed and build an Arabic daily digest\nconst raw = String($input.first().json.data || '');\nconst lines = raw.replace(/\\r\\n[ \\t]/g, '').replace(/\\n[ \\t]/g, '').split(/\\r?\\n/);\nconst events = [];\nlet ev = null;\nfor (const line of lines) {\n  if (line === 'BEGIN:VEVENT') { ev = {}; continue; }\n  if (line === 'END:VEVENT') { if (ev) events.push(ev); ev = null; continue; }\n  if (!ev) continue;\n  const i = line.indexOf(':'); if (i < 0) continue;\n  const key = line.slice(0, i).split(';')[0];\n  const val = line.slice(i + 1).replace(/\\\\,/g, ',').replace(/\\\\n/g, ' ').replace(/\\;/g, ';');\n  if (key === 'SUMMARY') ev.title = val;\n  if (key === 'DTSTART') ev.start = val;\n}\nconst tz = 'Asia/Riyadh';\nconst dayKey = (d) => d.toLocaleDateString('en-CA', { timeZone: tz });\nfunction toDate(s) {\n  const m = s.match(/^(\\d{4})(\\d{2})(\\d{2})(?:T(\\d{2})(\\d{2})(\\d{2})(Z)?)?/);\n  if (!m) return null;\n  if (!m[4]) return new Date(Date.UTC(+m[1], m[2] - 1, +m[3], 12));\n  if (m[7]) return new Date(Date.UTC(+m[1], m[2] - 1, +m[3], +m[4], +m[5], +m[6]));\n  return new Date(Date.UTC(+m[1], m[2] - 1, +m[3], +m[4] - 3, +m[5], +m[6]));\n}\nconst now = new Date();\nconst today = dayKey(now);\nconst tomorrow = dayKey(new Date(now.getTime() + 864e5));\nconst limit = dayKey(new Date(now.getTime() + 7 * 864e5));\nconst days = ['الأحد','الاثنين','الثلاثاء','الأربعاء','الخميس','الجمعة','السبت'];\nconst rows = events\n  .map(e => ({ ...e, d: e.start ? toDate(e.start) : null }))\n  .filter(e => e.d && dayKey(e.d) >= today && dayKey(e.d) <= limit)\n  .sort((a, b) => a.d - b.d)\n  .map(e => {\n    const k = dayKey(e.d);\n    const flag = k === today ? '🔴 اليوم' : k === tomorrow ? '🟠 بكرة' : '';\n    const dname = days[new Date(k + 'T12:00:00Z').getUTCDay()];\n    return `<tr><td>${dname} ${k.slice(5)}</td><td>${e.title}</td><td>${flag}</td></tr>`;\n  });\nconst urgent = rows.filter(r => r.includes('🔴') || r.includes('🟠')).length;\nconst html = `<div dir=\"rtl\" style=\"font-family:Arial;font-size:15px\">\n<h3>📅 واجبات تمارا: ${today}</h3>\n${rows.length ? `<table border=\"1\" cellpadding=\"6\" style=\"border-collapse:collapse\"><tr><th>اليوم</th><th>الواجب</th><th>تنبيه</th></tr>${rows.join('')}</table>` : '<p>لا توجد واجبات في الأيام السبعة القادمة على Schoology.</p>'}\n<p>عاجل: ${urgent}</p>\n<p style=\"color:#666\">المصدر: تقويم Schoology. واجبات العربي والحاسب على PowerSchool غير مشمولة.</p></div>`;\nreturn [{ json: { subject: `واجبات تمارا: ${urgent ? urgent + ' عاجل' : 'لا يوجد عاجل'}`, html, count: rows.length } }];\n"
+   },
+   "id": "a3",
+   "name": "Build digest",
+   "type": "n8n-nodes-base.code",
+   "typeVersion": 2,
+   "position": [
+    440,
+    0
+   ]
+  },
+  {
+   "parameters": {
+    "sendTo": "PASTE_YOUR_EMAIL_HERE",
+    "subject": "={{ $json.subject }}",
+    "message": "={{ $json.html }}",
+    "options": {}
+   },
+   "id": "a4",
+   "name": "Send to Latifah",
+   "type": "n8n-nodes-base.gmail",
+   "typeVersion": 2.1,
+   "position": [
+    660,
+    0
+   ]
+  }
+ ],
+ "connections": {
+  "Every day 3:30 PM": {
+   "main": [
+    [
+     {
+      "node": "Get Schoology calendar",
+      "type": "main",
+      "index": 0
+     }
+    ]
+   ]
+  },
+  "Get Schoology calendar": {
+   "main": [
+    [
+     {
+      "node": "Build digest",
+      "type": "main",
+      "index": 0
+     }
+    ]
+   ]
+  },
+  "Build digest": {
+   "main": [
+    [
+     {
+      "node": "Send to Latifah",
+      "type": "main",
+      "index": 0
+     }
+    ]
+   ]
+  }
+ },
+ "settings": {
+  "timezone": "Asia/Riyadh",
+  "executionOrder": "v1"
+ }
+}
