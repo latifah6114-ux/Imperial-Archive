@@ -33,6 +33,19 @@ dns:
 ownership:
   legal_owner: "Latifah Almutairi"
 
+canonical_decision:
+  decision_id: "DEC-2026-009"
+  order_ref: "IA-ORDER-DOMAIN-002"
+  canonical_domain: "imperialarchive.ai"
+  email_domain: "imperialarchive.com"
+  redirect_from: ["imperialarchive.com"]
+  ghost_domain_evaluated: "imperialarchive.pages.dev"
+  ghost_domain_status: "not_registered — zero repository references, not an Imperial Archive asset"
+  decided_by: "Latifah Almutairi"
+  decided_date: "2026-10-13"
+  status: "FINAL_LOCKED"
+  note: "DNS execution of this decision is performed manually by the owner; no DNS records were modified by this edit."
+
 status_summary:
   domain_registered: "yes"
   dns_delegated: "pending"

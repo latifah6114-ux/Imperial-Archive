@@ -11,7 +11,8 @@ document:
 
 connections:
   - { id: "CONN-GITHUB", name: "GitHub", type: "HOST", status: "VERIFIED_LIVE", account: "latifah6114-ux" }
-  - { id: "CONN-DOMAIN", name: "imperialarchive.ai", type: "DOMAIN", status: "CONFIGURED", registrar: "Epik.com", dns_provider: "Cloudflare" }
+  - { id: "CONN-DOMAIN", name: "imperialarchive.ai", type: "DOMAIN", status: "CONFIGURED", registrar: "Epik.com", dns_provider: "Cloudflare", role: "canonical (DEC-2026-009)" }
+  - { id: "CONN-DOMAIN-EMAIL", name: "imperialarchive.com", type: "DOMAIN_EMAIL", status: "CONFIGURED", registrar: "Epik.com", dns_provider: "Cloudflare", role: "email + redirect to imperialarchive.ai (DEC-2026-009)" }
   - { id: "CONN-EPIK", name: "Epik.com", type: "REGISTRAR", status: "DECLARED" }
   - { id: "CONN-CLOUDFLARE", name: "Cloudflare", type: "DNS_CDN", status: "DECLARED" }
   - { id: "CONN-REPLIT", name: "Replit", type: "EXECUTION", status: "ACTIVE" }

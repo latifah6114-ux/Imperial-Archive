@@ -11,14 +11,20 @@ conflicts:
   - { id: "CONFLICT-004", title: "Declared config/ path vs actual", status: "pending", severity: "LOW" }
   - { id: "CONFLICT-005", title: "Unsigned Commit", status: "pending", severity: "MEDIUM" }
   - { id: "CONFLICT-006", title: "Main Branch Not Protected", status: "pending", severity: "HIGH" }
+  - { id: "CONFLICT-007", title: "SPF record referenced Google while email provider was unconfirmed (Zoho)", status: "resolved", severity: "HIGH", resolved_by: "DEC-2026-009", source_report: "IA-ORDER-DOMAIN-001" }
+  - { id: "CONFLICT-008", title: "imperialarchive.com missing from connection-map.yml", status: "resolved", severity: "MEDIUM", resolved_by: "DEC-2026-009", source_report: "IA-ORDER-DOMAIN-001" }
+  - { id: "CONFLICT-009", title: "imperialarchive.pages.dev — candidate with zero repository presence", status: "resolved", severity: "HIGH", resolved_by: "DEC-2026-009", resolution: "confirmed not an Imperial Archive asset; not canonical", source_report: "IA-ORDER-DOMAIN-001" }
+  - { id: "CONFLICT-010", title: "Zoho verification added but repository not updated", status: "resolved", severity: "MEDIUM", resolved_by: "DEC-2026-009", source_report: "IA-ORDER-DOMAIN-001" }
+  - { id: "CONFLICT-011", title: "DNS and security statuses remained pending", status: "resolved", severity: "LOW", resolved_by: "DEC-2026-009", source_report: "IA-ORDER-DOMAIN-001" }
+  - { id: "CONFLICT-012", title: "CNAME implies GitHub Pages hosting with no explicit hosting record", status: "resolved", severity: "LOW", resolved_by: "DEC-2026-009", source_report: "IA-ORDER-DOMAIN-001" }
 
 summary:
-  total: 6
-  resolved: 1
+  total: 12
+  resolved: 7
   deprecated: 1
   reclassified: 1
   pending: 3
 
 owner: "Latifah Almutairi"
-last_updated: "2026-10-10"
+last_updated: "2026-10-13"
 rights: "© 2026 Imperial Archive."
