@@ -29,12 +29,24 @@ entities:
       registrar: "Epik.com"
       dns_provider: "Cloudflare"
       status: "active"
+      canonical_domain: true
+      decision_ref: "DEC-2026-009"
     - id: "IA-DOMAIN-EMAIL"
       name: "imperialarchive.com"
       registrar: "Epik.com"
       dns_provider: "Cloudflare"
       status: "active"
       purpose: "Email-only domain"
+      canonical_domain: false
+      redirects_to: "imperialarchive.ai"
+      decision_ref: "DEC-2026-009"
+    - id: "IA-DOMAIN-GHOST-CHECKED"
+      name: "imperialarchive.pages.dev"
+      registrar: null
+      dns_provider: null
+      status: "not_an_imperial_archive_asset"
+      note: "Evaluated under IA-ORDER-DOMAIN-001; zero repository references; not registered to this entity."
+      decision_ref: "DEC-2026-009"
   tsc_layers:
     - { id: "TSC-CORE", name: "Core Recovery" }
     - { id: "TSC-VISUAL", name: "Visual Identity" }
@@ -48,5 +60,5 @@ entities:
     - { id: "TSC-STRUCTURE", name: "Structure & Organization" }
 
 owner: "Latifah Almutairi"
-last_updated: "2026-10-10"
+last_updated: "2026-10-13"
 rights: "© 2026 Imperial Archive."
