@@ -56,3 +56,11 @@ release_blockers:
   - candidate cover image requires rights and child-media review
   - external HeyGen audio URLs require local archival masters or an approved delivery policy
   - all critical QA gates must pass
+
+automations:
+  - id: IA-EDU-TAMARA-AUTO-001
+    name: Tamara - Daily Homework Digest
+    platform: n8n Cloud (CONN-N8N)
+    path: projects/tamara-learning-program/canonical/automation/n8n/tamara-daily-homework-digest.json
+    status: PROPOSED_NOT_ACTIVE
+    data_policy: no child data, links, emails or credentials stored in the file; filled in n8n only
