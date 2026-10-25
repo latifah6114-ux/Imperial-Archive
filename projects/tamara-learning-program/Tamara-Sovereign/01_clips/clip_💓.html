@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>معاينة المقطع الأول</title>
+  <style>
+    :root{color-scheme:dark;--bg:#0b1020;--soft:#22304e;--text:#f5f7ff;--muted:#aeb9cf;--accent:#9f8ae8}
+    *{box-sizing:border-box}body{margin:0;min-height:100vh;padding:24px 14px 40px;background:radial-gradient(circle at top,#202b4b,var(--bg) 62%);color:var(--text);font-family:Arial,"Segoe UI",sans-serif}main{width:min(880px,100%);margin:auto}h1{margin:8px 0;font-size:clamp(1.5rem,4vw,2.2rem)}p{color:var(--muted);line-height:1.8}.label{color:var(--accent);font-weight:bold}.card{overflow:hidden;border:1px solid #ffffff22;border-radius:20px;background:#151e33ee}.screen{position:relative;display:grid;place-items:center;aspect-ratio:16/9;min-height:220px;background:#050914}video,iframe{display:none;position:absolute;inset:0;width:100%;height:100%;border:0;background:#050914}video{object-fit:contain}.empty{padding:25px;color:var(--muted);text-align:center;line-height:1.8}.controls{display:flex;flex-wrap:wrap;gap:10px;padding:16px;border-top:1px solid #ffffff22}button,a{min-height:44px;padding:10px 15px;border:1px solid #ffffff22;border-radius:11px;background:var(--soft);color:var(--text);font:inherit;font-weight:bold;text-decoration:none;cursor:pointer}button:hover,a:hover{background:#304269}.primary{background:#7660ca;border-color:transparent}.status{padding:0 16px 16px;color:var(--muted);line-height:1.6}.status::before{content:"●";margin-left:8px;color:#f0c36b}.status.online::before{color:#7ce0b0}.notes{margin-top:14px;padding:16px;border:1px solid #ffffff22;border-radius:15px;background:#151e33bb;color:var(--muted);line-height:1.8}@media(max-width:620px){.controls>*{width:100%}}
+  </style>
+</head>
+<body>
+  <main>
+    <header>
+      <div class="label">HTML + JavaScript منفصلان • تشغيل أوفلاين</div>
+      <h1>معاينة المقطع الأول</h1>
+      <p>اضغطي تشغيل الفيديو، وستبدأ الخلفية الصوتية تلقائياً.</p>
+    </header>
+
+    <section class="card">
+      <div class="screen">
+        <video id="localVideo" controls playsinline preload="metadata" src="clip_01.mp4"></video>
+      </div>
+      <div class="controls">
+        <button id="stopButton" type="button">إيقاف</button>
+      </div>
+      <div id="status" class="status" aria-live="polite">جاهز.</div>
+    </section>
+
+    <div class="notes">ضعي الفيديو <code>clip_01.mp4</code> بجانب هذا الملف، وملف الصوت الخاص بالصفحة هو <code>clip_01.js</code>.</div>
+  </main>
+  <script src="clip_01.js"></script>
+</body>
+</html>

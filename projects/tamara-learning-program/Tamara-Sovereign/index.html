@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tamara - Root Template</title>
+<style>
+  :root { --bg:#0f172a; --gold:#C9A227; --blue:#60a5fa; --green:#4ade80; --pink:#f472b6; }
+  body { background:linear-gradient(160deg, #0f172a, #1e1b4b); color:white; font-family: 'Nunito', sans-serif; min-height:100vh; display:flex; flex-direction:column; align-items:center; justify-content:center; padding:20px; text-align:center; }
+  .container { max-width:600px; width:100%; background:rgba(255,255,255,0.05); border:2px solid var(--blue); border-radius:20px; padding:30px; }
+  h1 { color:var(--gold); margin-bottom:20px; font-size:28px; }
+  .btn-group { display:flex; flex-direction:column; gap:15px; margin-top:20px; }
+  .btn { padding:15px; border-radius:50px; font-size:18px; font-weight:bold; cursor:pointer; border:none; text-decoration:none; display:block; transition:transform 0.1s; }
+  .btn:active { transform:scale(0.98); }
+  .btn-primary { background:var(--blue); color:white; }
+  .btn-audio { background:var(--pink); color:white; }
+  .btn-secondary { background:transparent; border:2px solid var(--gold); color:var(--gold); }
+  .btn-export { background:var(--green); color:#0f172a; }
+</style>
+</head>
+<body>
+  <div class="container">
+    <h1>👸🏼 Tamara Root Template</h1>
+    <p style="color:#94a3b8;">القالب الجذري الثابت. هنا نعاين الأدوات ونصدر النسخ.</p>
+
+    <div class="btn-group">
+      <a href="01_clips/clip_💓.html" class="btn btn-primary">🎬 تشغيل المقطع الأول</a>
+      <a href="02_assets/water_string_loops.html" class="btn btn-audio">🎵 معاينة الماء والوتر</a>
+      <a href="preview.html" class="btn btn-secondary">👁️ المعاينة</a>
+      <a href="03_export-tool/index.html" class="btn btn-export">📤 أداة التصدير</a>
+    </div>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>
