@@ -1,8 +1,7 @@
 <!doctype html>
 <html lang="ar" dir="rtl">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
   <title>معاينة المقطع الأول</title>
   <style>
     :root{color-scheme:dark;--bg:#0b1020;--soft:#22304e;--text:#f5f7ff;--muted:#aeb9cf;--accent:#9f8ae8}
@@ -11,23 +10,12 @@
 </head>
 <body>
   <main>
-    <header>
-      <div class="label">HTML + JavaScript منفصلان • تشغيل أوفلاين</div>
-      <h1>معاينة المقطع الأول</h1>
-      <p>اضغطي تشغيل الفيديو، وستبدأ الخلفية الصوتية تلقائياً.</p>
-    </header>
-
+    <header><div class="label">HTML + JavaScript</div><h1>معاينة المقطع الأول</h1><p>اضغطي تشغيل الفيديو.</p></header>
     <section class="card">
-      <div class="screen">
-        <video id="localVideo" controls playsinline preload="metadata" src="clip_01.mp4"></video>
-      </div>
-      <div class="controls">
-        <button id="stopButton" type="button">إيقاف</button>
-      </div>
-      <div id="status" class="status" aria-live="polite">جاهز.</div>
+      <div class="screen"><video id="localVideo" controls playsinline preload="metadata"></video><iframe id="youtubeFrame" title="YouTube" allowfullscreen></iframe><div id="emptyMessage" class="empty">▶<br><strong>اختاري فيديو</strong></div></div>
+      <div class="controls"><button id="chooseButton" class="primary" type="button">اختيار فيديو</button><button id="youtubeButton" type="button">YouTube</button><button id="saveButton" type="button" disabled>حفظ</button><button id="stopButton" type="button">إيقاف</button><input id="fileInput" type="file" accept="video/*,.mp4,.webm,.mov,.m4v"></div>
+      <div id="status" class="status">جاهز.</div>
     </section>
-
-    <div class="notes">ضعي الفيديو <code>clip_01.mp4</code> بجانب هذا الملف، وملف الصوت الخاص بالصفحة هو <code>clip_01.js</code>.</div>
   </main>
   <script src="clip_01.js"></script>
 </body>
