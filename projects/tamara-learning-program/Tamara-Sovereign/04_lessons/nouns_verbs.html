@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>Nouns and Verbs - Tamara</title>
+<style>
+  :root {
+    --bg: #fdf4ff;
+    --card: #ffffff;
+    --text: #1e293b;
+    --noun-color: #3b82f6; /* blue for nouns */
+    --verb-color: #ef4444; /* red for verbs */
+    --accent: #f59e0b;
+    --green: #22c55e;
+  }
+  * { margin:0; padding:0; box-sizing:border-box; font-family: 'Nunito', 'Segoe UI', Arial, sans-serif; -webkit-tap-highlight-color:transparent; user-select:none; }
+  body { background: var(--bg); color: var(--text); min-height: 100vh; display: flex; flex-direction: column; align-items: center; padding: 20px; text-align: center; }
+
+  .header { margin-bottom: 20px; }
+  .header h1 { color: var(--text); font-size: 32px; font-weight: 800; }
+  .header p { color: #64748b; font-size: 16px; }
+
+  .card { background: var(--card); width: 100%; max-width: 600px; border-radius: 24px; padding: 30px 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); border: 2px solid #e2e8f0; margin-bottom: 20px; }
+
+  /* Explanation box */
+  .explanation-box { display: flex; flex-direction: column; gap: 15px; margin-bottom: 30px; }
+  .concept-box { padding: 20px; border-radius: 16px; text-align: left; }
+  .concept-noun { background: rgba(59, 130, 246, 0.1); border: 2px solid var(--noun-color); }
+  .concept-verb { background: rgba(239, 68, 68, 0.1); border: 2px solid var(--verb-color); }
+  .concept-box h2 { font-size: 24px; margin-bottom: 10px; }
+  .concept-noun h2 { color: var(--noun-color); }
+  .concept-verb h2 { color: var(--verb-color); }
+  .concept-box p { font-size: 18px; line-height: 1.6; }
+
+  /* Game area */
+  .game-area { margin-top: 20px; }
+  .word-display { font-size: 64px; font-weight: 900; margin-bottom: 30px; color: var(--text); }
+
+  .buttons { display: flex; gap: 20px; justify-content: center; }
+  .btn { flex: 1; padding: 20px; border-radius: 16px; border: none; font-size: 22px; font-weight: bold; cursor: pointer; }
+  .btn-noun { background: rgba(59, 130, 246, 0.1); color: var(--noun-color); border: 2px solid var(--noun-color); }
+  .btn-verb { background: rgba(239, 68, 68, 0.1); color: var(--verb-color); border: 2px solid var(--verb-color); }
+  .btn:active { transform: scale(0.95); }
+
+  .feedback { margin-top: 20px; font-size: 24px; font-weight: bold; min-height: 30px; }
+
+  .next-btn { display: none; margin: 20px auto 0; padding: 15px 40px; border-radius: 50px; background: var(--accent); color: white; font-size: 20px; font-weight: bold; border: none; cursor: pointer; }
+</style>
+</head>
+<body>
+
+  <div class="header">
+    <h1>Nouns and Verbs</h1>
+    <p>Let's play and learn!</p>
+  </div>
+
+  <!-- Visual explanation -->
+  <div class="card explanation-box" id="explanationArea">
+    <div class="concept-box concept-noun">
+      <h2>Noun</h2>
+      <p>A noun is a word for a <strong>person</strong> (like: boy), a <strong>place</strong> (like: house), or a <strong>thing</strong> (like: apple).</p>
+    </div>
+    <div class="concept-box concept-verb">
+      <h2>Verb</h2>
+      <p>A verb is an <strong>action</strong> word, something we do (like: eat, jump, laugh).</p>
+    </div>
+    <button class="next-btn" style="display:block; background:var(--green);" onclick="startGame()">Got it! Let's play 🎮</button>
+  </div>
+
+  <!-- Game area -->
+  <div class="card game-area" id="gameArea" style="display:none;">
+    <div class="word-display" id="wordDisplay">...</div>
+    <div class="buttons">
+      <button class="btn btn-noun" onclick="checkAnswer('noun')">Noun</button>
+      <button class="btn btn-verb" onclick="checkAnswer('verb')">Verb</button>
+    </div>
+    <div class="feedback" id="feedback"></div>
+    <button class="next-btn" id="nextBtn" onclick="nextQuestion()">Next ➔</button>
+  </div>
+
+<script>
+  // Word bank (nouns and verbs)
+  const words = [
+    { text: "boy", type: "noun" },      // person
+    { text: "eat", type: "verb" },      // action
+    { text: "house", type: "noun" },    // place
+    { text: "jump", type: "verb" },     // action
+    { text: "apple", type: "noun" },    // thing
+    { text: "laugh", type: "verb" },    // action
+    { text: "car", type: "noun" },      // thing
+    { text: "run", type: "verb" },      // action
+    { text: "cat", type: "noun" },      // thing
+    { text: "drink", type: "verb" }     // action
+  ];
+
+  let currentIndex = 0;
+  let isAnswered = false;
+
+  const explanationArea = document.getElementById('explanationArea');
+  const gameArea = document.getElementById('gameArea');
+  const wordDisplay = document.getElementById('wordDisplay');
+  const feedback = document.getElementById('feedback');
+  const nextBtn = document.getElementById('nextBtn');
+
+  function startGame() {
+    explanationArea.style.display = 'none';
+    gameArea.style.display = 'block';
+    loadQuestion();
+  }
+
+  function loadQuestion() {
+    isAnswered = false;
+    feedback.textContent = '';
+    nextBtn.style.display = 'none';
+
+    // Shuffle the words
+    if (currentIndex === 0) {
+      words.sort(() => Math.random() - 0.5);
+    }
+
+    wordDisplay.textContent = words[currentIndex].text;
+  }
+
+  function checkAnswer(selection) {
+    if (isAnswered) return;
+    isAnswered = true;
+
+    const correctAnswer = words[currentIndex].type;
+
+    if (selection === correctAnswer) {
+      feedback.textContent = '✅ Great job! That\'s correct.';
+      feedback.style.color = 'var(--green)';
+    } else {
+      feedback.textContent = '❌ Try again.';
+      feedback.style.color = 'var(--verb-color)';
+    }
+
+    nextBtn.style.display = 'block';
+  }
+
+  function nextQuestion() {
+    currentIndex++;
+    if (currentIndex >= words.length) {
+      // Start over
+      currentIndex = 0;
+      wordDisplay.textContent = "🎉 Well done! You finished the game.";
+      feedback.textContent = "Tap to play again";
+      nextBtn.textContent = "Play again 🔄";
+      nextBtn.onclick = () => { currentIndex = 0; nextBtn.textContent = "Next ➔"; nextBtn.onclick = nextQuestion; loadQuestion(); };
+      nextBtn.style.display = 'block';
+      return;
+    }
+    loadQuestion();
+  }
+
+</script>
+</body>
+</html>

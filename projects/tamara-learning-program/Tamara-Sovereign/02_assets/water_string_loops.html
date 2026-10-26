@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Water & String Loops</title>
+  <style>
+    :root{color-scheme:dark;--bg:#0b1020;--panel:#151e33;--soft:#22304e;--text:#f5f7ff;--muted:#aeb9cf;--accent:#9f8ae8}
+    *{box-sizing:border-box}body{margin:0;min-height:100vh;padding:24px 14px 40px;background:radial-gradient(circle at top,#202b4b,var(--bg) 62%);color:var(--text);font-family:Arial,"Segoe UI",sans-serif}main{width:min(900px,100%);margin:auto}.label{color:var(--accent);font-weight:bold}h1{margin:8px 0;font-size:clamp(1.5rem,4vw,2.2rem)}.intro{color:var(--muted);line-height:1.8}.grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}.card{padding:18px;border:1px solid #ffffff22;border-radius:18px;background:#151e33ee;box-shadow:0 16px 40px #0004}.card h2{margin:0 0 6px}.card p{margin:0 0 14px;color:var(--muted);line-height:1.7}.audio-box{padding:16px 0}.audio-box audio{width:100%}.buttons{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}button,a{min-height:42px;padding:9px 13px;border:1px solid #ffffff22;border-radius:10px;background:var(--soft);color:var(--text);font:inherit;font-weight:bold;text-decoration:none;cursor:pointer}button:hover,a:hover{background:#304269}.primary{background:#7660ca;border-color:transparent}.status{margin-top:14px;padding:12px 14px;border-radius:12px;background:#151e33bb;color:var(--muted);line-height:1.7}.status::before{content:"●";margin-left:8px;color:#f0c36b}.status.online::before{color:#7ce0b0}.note{margin-top:14px;padding:14px;border:1px solid #ffffff22;border-radius:14px;color:var(--muted);line-height:1.8}code{color:#e8e0ff}input{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0)}@media(max-width:700px){.grid{grid-template-columns:1fr}.buttons>*{width:100%}}
+  </style>
+</head>
+<body>
+  <main>
+    <header><div class="label">HTML + JavaScript</div><h1>معاينة أصوات الماء والوتر</h1><p class="intro">ضعي ملفي الصوت في هذا المجلد.</p></header>
+    <section class="grid">
+      <article class="card"><h2>صوت الماء</h2><p>Water Loop — <code>water_loop.mp3</code></p><div class="audio-box"><audio id="waterAudio" controls preload="metadata" src="water_loop.mp3"></audio></div><div class="buttons"><button class="primary" data-file-input="waterInput" type="button">اختيار ملف</button><button data-youtube="https://youtu.be/d-qwYINyYPk" type="button">YouTube</button><button data-save="waterAudio" type="button">حفظ</button><input id="waterInput" type="file" accept="audio/*,.mp3"></div><div id="waterStatus" class="status">جاهز.</div></article>
+      <article class="card"><h2>صوت الوتر</h2><p>String Loop — <code>string_loop.mp3</code></p><div class="audio-box"><audio id="stringAudio" controls preload="metadata" src="string_loop.mp3"></audio></div><div class="buttons"><button class="primary" data-file-input="stringInput" type="button">اختيار ملف</button><button data-youtube="https://youtu.be/om0n8qk9IYU" type="button">YouTube</button><button data-save="stringAudio" type="button">حفظ</button><input id="stringInput" type="file" accept="audio/*,.mp3"></div><div id="stringStatus" class="status">جاهز.</div></article>
+    </section>
+  </main>
+  <script src="water_string_loops.js"></script>
+</body>
+</html>
