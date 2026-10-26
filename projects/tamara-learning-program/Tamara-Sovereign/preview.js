@@ -16,6 +16,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // حالة الصورة: التكبير، التدوير، الإزاحة، وطريقة الملاءمة
     const view = { scale: 1, rotation: 0, x: 0, y: 0, fill: false };
     let imageUrl = null;
+    let pendingReader = null; // قراءة ملف HTML الجارية؛ تُلغى عند تغيير العرض
 
     function hideImage() {
         stage.style.display = 'none';
@@ -26,6 +27,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function hideFrame() {
+        pendingReader = null;
         frame.removeAttribute('src');
         frame.removeAttribute('srcdoc');
         frame.removeAttribute('sandbox');
@@ -50,6 +52,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // 1. صفحة من القالب: تُفتح بمسارها فتعمل أصواتها وملفاتها المرتبطة
     select.addEventListener('change', () => {
         if (!select.value) return clear('جاهز.');
+        pendingReader = null;
         frame.removeAttribute('srcdoc');
         frame.removeAttribute('sandbox');
         frame.src = select.value;
@@ -58,12 +61,16 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // 2. ملف HTML من الجهاز: يُعرض في إطار معزول عن القالب
-    document.getElementById('chooseHtml').addEventListener('click', () => input.click());
+    // تفريغ القيمة قبل الفتح حتى يعمل اختيار الملف نفسه مرة ثانية
+    document.getElementById('chooseHtml').addEventListener('click', () => { input.value = ''; input.click(); });
     input.addEventListener('change', (e) => {
         const file = e.target.files[0];
         if (!file) return;
         const reader = new FileReader();
+        pendingReader = reader;
         reader.onload = () => {
+            if (reader !== pendingReader) return; // اختارت المستخدمة شيئاً آخر أثناء القراءة
+            pendingReader = null;
             frame.removeAttribute('src');
             frame.setAttribute('sandbox', 'allow-scripts allow-forms allow-modals allow-popups');
             frame.srcdoc = reader.result;
@@ -99,14 +106,19 @@ document.addEventListener('DOMContentLoaded', () => {
         render();
     }
 
-    document.getElementById('chooseImage').addEventListener('click', () => imageInput.click());
+    document.getElementById('chooseImage').addEventListener('click', () => { imageInput.value = ''; imageInput.click(); });
     imageInput.addEventListener('change', (e) => {
         const file = e.target.files[0];
-        if (!file || !file.type.startsWith('image/')) return;
+        if (!file) return;
+        if (!file.type.startsWith('image/')) {
+            status.textContent = 'الملف المختار ليس صورة: ' + file.name;
+            return;
+        }
         hideFrame();
         if (imageUrl) URL.revokeObjectURL(imageUrl);
         imageUrl = URL.createObjectURL(file);
         img.onload = () => resetView();
+        img.onerror = () => clear('تعذّر عرض هذه الصورة: ' + file.name);
         img.src = imageUrl;
         stage.style.display = 'block';
         imageControls.style.display = 'flex';
